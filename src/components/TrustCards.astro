@@ -1,0 +1,88 @@
+---
+interface Card {
+	title: string;
+	text: string;
+}
+
+interface Props {
+	items: Card[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="trust-band">
+	<div class="container trust-grid">
+		{
+			items.map((item, index) => (
+				<article class="trust-card">
+					<div class="icon-box" aria-hidden="true">
+						<svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+							<path d={index % 2 === 0 ? 'M5 13l4 4L19 7' : 'M12 3l7 4v5c0 4-2.8 7.6-7 9-4.2-1.4-7-5-7-9V7l7-4z'} stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+					<h2>{item.title}</h2>
+					<p>{item.text}</p>
+				</article>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.trust-band {
+		padding: 12px 0 52px;
+	}
+
+	.trust-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.trust-card {
+		min-height: 210px;
+		border: 1px solid rgba(220, 234, 246, 0.96);
+		border-radius: 8px;
+		background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+		padding: 22px;
+		box-shadow: 0 16px 34px rgba(7, 26, 54, 0.06);
+		transition:
+			transform 180ms ease,
+			border-color 180ms ease;
+	}
+
+	.trust-card:hover {
+		border-color: rgba(18, 151, 223, 0.42);
+		transform: translateY(-3px);
+	}
+
+	h2 {
+		margin: 18px 0 10px;
+		font-size: 1.05rem;
+		line-height: 1.25;
+	}
+
+	p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.94rem;
+		line-height: 1.62;
+	}
+
+	@media (max-width: 900px) {
+		.trust-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 560px) {
+		.trust-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.trust-card {
+			min-height: auto;
+		}
+	}
+</style>

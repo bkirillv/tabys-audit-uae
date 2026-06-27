@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="TABYS">
+	<rect width="128" height="128" rx="24" fill="#fff"/>
+	<path d="M70 12 114 102H78L58 62 35 102H14L56 20c3-6 9-8 14-8Z" fill="#ff7a13"/>
+	<path d="M23 104C47 45 76 18 102 9 79 44 91 70 58 83c-13 5-24 10-35 21Z" fill="#18bde8"/>
+	<path d="M22 104c30-2 64-4 86-22-12 22-43 32-86 22Z" fill="#0479c6"/>
+</svg>

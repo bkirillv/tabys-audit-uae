@@ -1,0 +1,109 @@
+---
+interface Props {
+	contact: {
+		eyebrow: string;
+		title: string;
+		text: string;
+		phoneLabel: string;
+		emailLabel: string;
+		addressLabel: string;
+		phone: string;
+		email: string;
+		address: string;
+		cta: string;
+	};
+}
+
+const { contact } = Astro.props;
+const whatsappHref = `https://wa.me/${contact.phone.replace(/\D/g, '')}`;
+---
+
+<section id="contact" class="contact">
+	<div class="container contact-grid">
+		<div>
+			<p class="eyebrow">{contact.eyebrow}</p>
+			<h2 class="section-title">{contact.title}</h2>
+			<p class="section-copy">{contact.text}</p>
+		</div>
+
+		<div class="contact-panel">
+			<a href={`tel:${contact.phone.replace(/\s/g, '')}`}>
+				<span>{contact.phoneLabel}</span>
+				<strong>{contact.phone}</strong>
+			</a>
+			<a href={`mailto:${contact.email}`}>
+				<span>{contact.emailLabel}</span>
+				<strong>{contact.email}</strong>
+			</a>
+			<div>
+				<span>{contact.addressLabel}</span>
+				<strong>{contact.address}</strong>
+			</div>
+			<a class="button button-primary" href={whatsappHref} target="_blank" rel="noreferrer">{contact.cta}</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		padding: 0 0 clamp(56px, 8vw, 90px);
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+		gap: clamp(28px, 5vw, 66px);
+		align-items: center;
+		border-top: 1px solid var(--line);
+		padding-top: clamp(46px, 8vw, 82px);
+	}
+
+	.section-copy {
+		max-width: 620px;
+		margin: 22px 0 0;
+	}
+
+	.contact-panel {
+		display: grid;
+		gap: 12px;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		background: #ffffff;
+		padding: 20px;
+		box-shadow: var(--shadow);
+	}
+
+	.contact-panel > a:not(.button),
+	.contact-panel > div {
+		display: grid;
+		gap: 4px;
+		border-radius: 8px;
+		background: var(--soft);
+		padding: 16px;
+	}
+
+	span {
+		color: var(--muted);
+		font-size: 0.78rem;
+		font-weight: 900;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	strong {
+		color: var(--ink);
+		font-size: 1rem;
+		line-height: 1.35;
+		word-break: break-word;
+	}
+
+	.button {
+		margin-top: 4px;
+	}
+
+	@media (max-width: 800px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

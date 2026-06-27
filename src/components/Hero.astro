@@ -1,0 +1,255 @@
+---
+interface Props {
+	hero: {
+		eyebrow: string;
+		title: string;
+		description: string;
+		primary: string;
+		secondary: string;
+		metrics: string[];
+	};
+}
+
+const { hero } = Astro.props;
+---
+
+<section class="hero">
+	<div class="container hero-grid">
+		<div class="hero-content">
+			<p class="eyebrow">{hero.eyebrow}</p>
+			<h1>{hero.title}</h1>
+			<p class="hero-copy">{hero.description}</p>
+			<div class="hero-actions">
+				<a class="button button-primary" href="#contact">{hero.primary}</a>
+				<a class="button button-secondary" href="#services">{hero.secondary}</a>
+			</div>
+			<div class="metrics" aria-label="TABYS highlights">
+				{hero.metrics.map((metric) => <span>{metric}</span>)}
+			</div>
+		</div>
+
+		<div class="hero-visual" aria-hidden="true">
+			<div class="wave wave-blue"></div>
+			<div class="wave wave-orange"></div>
+			<div class="statement-card">
+				<span class="statement-label">TABYS</span>
+				<strong>Audit-ready finance rhythm</strong>
+				<div class="bars">
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		overflow: hidden;
+		padding: clamp(52px, 8vw, 96px) 0 46px;
+	}
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+		align-items: center;
+		gap: clamp(28px, 5vw, 72px);
+	}
+
+	h1 {
+		max-width: 720px;
+		margin: 0;
+		color: var(--ink);
+		font-size: clamp(2.55rem, 6vw, 5.4rem);
+		line-height: 0.98;
+		letter-spacing: 0;
+	}
+
+	.hero-copy {
+		max-width: 600px;
+		margin: 24px 0 0;
+		color: var(--muted);
+		font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+		line-height: 1.75;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 14px;
+		margin-top: 32px;
+	}
+
+	.metrics {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 34px;
+	}
+
+	.metrics span {
+		border: 1px solid rgba(18, 151, 223, 0.16);
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.8);
+		padding: 10px 12px;
+		color: #263b58;
+		font-size: 0.9rem;
+		font-weight: 800;
+		box-shadow: 0 10px 24px rgba(7, 26, 54, 0.05);
+	}
+
+	.hero-visual {
+		position: relative;
+		min-height: 520px;
+	}
+
+	.wave {
+		position: absolute;
+		right: -22%;
+		width: min(760px, 92vw);
+		border-radius: 52% 48% 54% 46% / 52% 40% 60% 48%;
+		transform: rotate(-15deg);
+	}
+
+	.wave-blue {
+		top: 38px;
+		height: 310px;
+		background:
+			linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 42%),
+			linear-gradient(140deg, #0b83d4 0%, #19bce7 58%, #69d5ef 100%);
+		box-shadow: 0 32px 80px rgba(18, 151, 223, 0.28);
+	}
+
+	.wave-blue::before,
+	.wave-blue::after {
+		position: absolute;
+		inset: 24% 4% auto 11%;
+		height: 1px;
+		content: "";
+		background: rgba(255, 255, 255, 0.72);
+		transform: rotate(-7deg);
+	}
+
+	.wave-blue::after {
+		top: 54%;
+		left: 4%;
+		width: 78%;
+		background: rgba(255, 255, 255, 0.42);
+	}
+
+	.wave-orange {
+		top: 236px;
+		height: 170px;
+		background: linear-gradient(135deg, #ff7a13 0%, #ffa047 68%, #ffd1aa 100%);
+		box-shadow: 0 26px 60px rgba(255, 122, 19, 0.22);
+	}
+
+	.statement-card {
+		position: absolute;
+		right: min(42px, 5vw);
+		bottom: 34px;
+		width: min(330px, 78vw);
+		border: 1px solid rgba(255, 255, 255, 0.54);
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.9);
+		padding: 22px;
+		box-shadow: var(--shadow);
+		backdrop-filter: blur(10px);
+	}
+
+	.statement-label {
+		color: var(--orange);
+		font-size: 0.75rem;
+		font-weight: 900;
+		letter-spacing: 0.1em;
+	}
+
+	.statement-card strong {
+		display: block;
+		margin-top: 8px;
+		color: var(--ink);
+		font-size: 1.35rem;
+		line-height: 1.2;
+	}
+
+	.bars {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		align-items: end;
+		gap: 8px;
+		height: 86px;
+		margin-top: 18px;
+	}
+
+	.bars i {
+		display: block;
+		border-radius: 6px 6px 0 0;
+		background: linear-gradient(180deg, var(--cyan), var(--blue-dark));
+	}
+
+	.bars i:nth-child(1) {
+		height: 42%;
+	}
+
+	.bars i:nth-child(2) {
+		height: 70%;
+	}
+
+	.bars i:nth-child(3) {
+		height: 54%;
+		background: linear-gradient(180deg, #ffae63, var(--orange));
+	}
+
+	.bars i:nth-child(4) {
+		height: 84%;
+	}
+
+	@media (max-width: 900px) {
+		.hero-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-visual {
+			min-height: 360px;
+		}
+
+		.wave {
+			right: -12%;
+		}
+	}
+
+	@media (max-width: 620px) {
+		.hero {
+			padding-top: 38px;
+		}
+
+		h1 {
+			font-size: clamp(2.35rem, 13vw, 3.5rem);
+		}
+
+		.hero-actions {
+			display: grid;
+		}
+
+		.hero-visual {
+			min-height: 310px;
+		}
+
+		.wave-blue {
+			top: 18px;
+			height: 220px;
+		}
+
+		.wave-orange {
+			top: 162px;
+			height: 112px;
+		}
+
+		.statement-card {
+			right: 0;
+			bottom: 4px;
+		}
+	}
+</style>

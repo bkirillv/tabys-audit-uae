@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "TABYS Audit & Consulting | Accounting consulting in the UAE",
+    "description": "A multilingual TABYS landing page for bookkeeping, VAT, corporate tax, and financial consulting services."
+  },
+  "nav": {
+    "services": "Services",
+    "approach": "Approach",
+    "industries": "Industries",
+    "contact": "Contacts",
+    "cta": "Book a consultation"
+  },
+  "hero": {
+    "eyebrow": "Accounting consulting for UAE businesses",
+    "title": "Reliable books, transparent reporting, calmer business decisions.",
+    "description": "TABYS helps founders and companies manage accounting, prepare tax reporting, and make financial decisions with clear numbers.",
+    "primary": "Schedule a call",
+    "secondary": "View services",
+    "metrics": ["7+ years of experience", "UAE VAT and Corporate Tax"]
+  },
+  "trust": [
+    {
+      "title": "Clear processes",
+      "text": "We define tasks, deadlines, and ownership so accounting stays organized."
+    },
+    {
+      "title": "Regulatory alignment",
+      "text": "Mock support for VAT, Corporate Tax, ESR, and essential compliance checks."
+    },
+    {
+      "title": "Transparent communication",
+      "text": "Reports and updates in plain language, focused on decisions."
+    },
+    {
+      "title": "End-to-end support",
+      "text": "From initial bookkeeping setup to recurring reporting and consultations."
+    }
+  ],
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Comprehensive support for your business",
+    "items": [
+      {
+        "title": "Accounting setup",
+        "points": ["Accounting structure selection", "Chart of accounts and workflows", "Opening balance restoration"]
+      },
+      {
+        "title": "UAE VAT",
+        "points": ["VAT registration and deregistration", "Return preparation", "Input document review"]
+      },
+      {
+        "title": "UAE Corporate Tax",
+        "points": ["Tax position review", "Calculation preparation", "Filing support"]
+      },
+      {
+        "title": "Financial reporting",
+        "points": ["Monthly management reports", "P&L, cash flow, balance sheet", "Owner dashboards"]
+      },
+      {
+        "title": "Payroll and WPS",
+        "points": ["Salary calculations", "Payroll schedules", "HR document support"]
+      },
+      {
+        "title": "Advisory services",
+        "points": ["Financial model review", "Audit preparation", "Process optimization"]
+      }
+    ]
+  },
+  "industries": {
+    "title": "We work with companies across industries",
+    "items": ["E-commerce", "HoReCa", "Real Estate", "Consulting", "Trading", "IT & Digital", "Beauty & Wellness", "Logistics"]
+  },
+  "process": {
+    "eyebrow": "How we start",
+    "title": "A fast and calm onboarding process",
+    "steps": [
+      {
+        "title": "Discovery",
+        "text": "We hold an intro call, collect context, and define required documents."
+      },
+      {
+        "title": "Work plan",
+        "text": "We prepare a roadmap with timelines, ownership, and pricing."
+      },
+      {
+        "title": "Ongoing support",
+        "text": "We launch the accounting cadence, regular reports, and advisory support."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's discuss your company's accounting and taxes",
+    "text": "Send us a request, and we will help you choose the right starting point: bookkeeping cleanup, ongoing support, or tax advisory.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "addressLabel": "Address",
+    "phone": "+971 50 000 0000",
+    "email": "hello@tabys.consulting",
+    "address": "Dubai, United Arab Emirates",
+    "cta": "Message on WhatsApp"
+  },
+  "footer": {
+    "text": "TABYS Audit & Consulting. Accounting consulting and business support."
+  }
+}

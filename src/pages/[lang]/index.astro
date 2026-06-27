@@ -1,0 +1,50 @@
+---
+import { getTranslations, setRequestLocale } from 'astro-intl';
+import ContactSection from '../../components/ContactSection.astro';
+import Hero from '../../components/Hero.astro';
+import IndustriesBand from '../../components/IndustriesBand.astro';
+import ProcessSection from '../../components/ProcessSection.astro';
+import ServicesSection from '../../components/ServicesSection.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import TrustCards from '../../components/TrustCards.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLocale, locales, ui, type Locale, type Messages } from '../../i18n';
+
+export function getStaticPaths() {
+	return locales.map((lang) => ({ params: { lang } }));
+}
+
+const langParam = Astro.params.lang;
+const lang: Locale = isLocale(langParam) ? langParam : 'ru';
+
+await setRequestLocale(Astro.url, async () => ({
+	locale: lang,
+	messages: ui[lang],
+}));
+
+const t = getTranslations<Messages>();
+const messages = ui[lang];
+const whatsappHref = `https://wa.me/${messages.contact.phone.replace(/\D/g, '')}`;
+---
+
+<BaseLayout lang={lang} title={t('meta.title')} description={t('meta.description')}>
+	<SiteHeader lang={lang} nav={messages.nav} ctaHref={whatsappHref} />
+	<main>
+		<Hero hero={messages.hero} />
+		<TrustCards items={messages.trust} />
+		<ServicesSection
+			eyebrow={messages.services.eyebrow}
+			title={messages.services.title}
+			items={messages.services.items}
+		/>
+		<ProcessSection
+			eyebrow={messages.process.eyebrow}
+			title={messages.process.title}
+			steps={messages.process.steps}
+		/>
+		<IndustriesBand title={messages.industries.title} items={messages.industries.items} />
+		<ContactSection contact={messages.contact} />
+	</main>
+	<SiteFooter lang={lang} text={messages.footer.text} />
+</BaseLayout>

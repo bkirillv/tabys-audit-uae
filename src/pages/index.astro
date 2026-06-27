@@ -1,5 +1,31 @@
 ---
 import { withBase } from '../site';
 
-return Astro.redirect(withBase('en/'));
+const englishTarget = withBase('en/');
+const russianTarget = withBase('ru/');
 ---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<link rel="canonical" href={englishTarget} />
+		<title>Redirecting to TABYS</title>
+		<script is:inline define:vars={{ englishTarget, russianTarget }}>
+			const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+			const hasRussian = languages.some((language) => language.toLowerCase().startsWith('ru'));
+			const target = hasRussian ? russianTarget : englishTarget;
+			const nextUrl = new URL(target, window.location.origin);
+			nextUrl.search = window.location.search;
+			nextUrl.hash = window.location.hash;
+			window.location.replace(nextUrl);
+		</script>
+	</head>
+	<body>
+		<p>Choose your language:</p>
+		<a href={englishTarget}>English</a>
+		<a href={russianTarget}>Русский</a>
+	</body>
+</html>

@@ -3,6 +3,26 @@
     "title": "TABYS Audit & Consulting | Бухгалтерский консалтинг в ОАЭ",
     "description": "Мультиязычная лендинговая страница TABYS для бухгалтерского учета, VAT, corporate tax и финансового консалтинга."
   },
+  "common": {
+    "brandName": "TABYS Audit & Consulting",
+    "logoAlt": "Логотип TABYS Audit & Consulting",
+    "homeAria": "Главная TABYS",
+    "primaryNavAria": "Основная навигация",
+    "languageSwitcherAria": "Переключатель языка",
+    "localeLabels": {
+      "en": "EN",
+      "ru": "RU"
+    },
+    "schemaAreaServed": "Объединенные Арабские Эмираты",
+    "schemaAvailableLanguages": ["Английский", "Русский"],
+    "schemaServiceTypes": ["Бухгалтерский консалтинг", "Бухгалтерское сопровождение", "Консалтинг по VAT", "Консалтинг по Corporate Tax"]
+  },
+  "redirect": {
+    "title": "Переход на TABYS",
+    "chooseLanguage": "Выберите язык:",
+    "englishLink": "English",
+    "russianLink": "Русский"
+  },
   "nav": {
     "services": "Услуги",
     "approach": "Подход",
@@ -16,6 +36,9 @@
     "description": "TABYS помогает предпринимателям и компаниям вести бухгалтерию, готовить налоговую отчетность и принимать финансовые решения на понятных цифрах.",
     "primary": "Записаться на звонок",
     "secondary": "Смотреть услуги",
+    "metricsAria": "Преимущества TABYS",
+    "statementLabel": "TABYS",
+    "statementTitle": "Финансовый ритм, готовый к аудиту",
     "metrics": ["7+ лет опыта", "UAE VAT и Corporate Tax"]
   },
   "trust": [
@@ -68,7 +91,7 @@
   },
   "industries": {
     "title": "Работаем с компаниями разных сфер",
-    "items": ["E-commerce", "HoReCa", "Real Estate", "Consulting", "Trading", "IT & Digital", "Beauty & Wellness", "Logistics"]
+    "items": ["Интернет-магазины", "Гостиницы и рестораны", "Недвижимость", "Консалтинг", "Торговля", "IT и digital", "Салоны красоты и здоровье", "Логистика"]
   },
   "process": {
     "eyebrow": "Как начинаем",
@@ -97,7 +120,7 @@
     "addressLabel": "Адрес",
     "phone": "+971 50 000 0000",
     "email": "hello@tabys.consulting",
-    "address": "Dubai, United Arab Emirates",
+    "address": "Дубай, ОАЭ",
     "cta": "Написать в WhatsApp"
   },
   "footer": {

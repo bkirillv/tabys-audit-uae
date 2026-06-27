@@ -3,6 +3,26 @@
     "title": "TABYS Audit & Consulting | Accounting consulting in the UAE",
     "description": "A multilingual TABYS landing page for bookkeeping, VAT, corporate tax, and financial consulting services."
   },
+  "common": {
+    "brandName": "TABYS Audit & Consulting",
+    "logoAlt": "TABYS Audit & Consulting logo",
+    "homeAria": "TABYS home",
+    "primaryNavAria": "Primary navigation",
+    "languageSwitcherAria": "Language switcher",
+    "localeLabels": {
+      "en": "EN",
+      "ru": "RU"
+    },
+    "schemaAreaServed": "United Arab Emirates",
+    "schemaAvailableLanguages": ["English", "Russian"],
+    "schemaServiceTypes": ["Accounting consulting", "Bookkeeping", "VAT consulting", "Corporate tax advisory"]
+  },
+  "redirect": {
+    "title": "Redirecting to TABYS",
+    "chooseLanguage": "Choose your language:",
+    "englishLink": "English",
+    "russianLink": "Russian"
+  },
   "nav": {
     "services": "Services",
     "approach": "Approach",
@@ -16,6 +36,9 @@
     "description": "TABYS helps founders and companies manage accounting, prepare tax reporting, and make financial decisions with clear numbers.",
     "primary": "Schedule a call",
     "secondary": "View services",
+    "metricsAria": "TABYS highlights",
+    "statementLabel": "TABYS",
+    "statementTitle": "Audit-ready finance rhythm",
     "metrics": ["7+ years of experience", "UAE VAT and Corporate Tax"]
   },
   "trust": [

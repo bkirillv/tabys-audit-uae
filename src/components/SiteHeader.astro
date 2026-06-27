@@ -5,6 +5,13 @@ import { withBase } from '../site';
 interface Props {
 	lang: Locale;
 	ctaHref: string;
+	common: {
+		logoAlt: string;
+		homeAria: string;
+		primaryNavAria: string;
+		languageSwitcherAria: string;
+		localeLabels: Record<Locale, string>;
+	};
 	nav: {
 		services: string;
 		approach: string;
@@ -14,17 +21,16 @@ interface Props {
 	};
 }
 
-const { lang, nav, ctaHref } = Astro.props;
-const labels: Record<Locale, string> = { ru: 'RU', en: 'EN' };
+const { lang, nav, ctaHref, common } = Astro.props;
 ---
 
 <header class="site-header">
 	<div class="container header-inner">
-		<a class="brand" href={withBase(`${lang}/`)} aria-label="TABYS home">
-			<img src={withBase('tabys-logo.png')} alt="TABYS Audit Consulting" width="88" height="88" />
+		<a class="brand" href={withBase(`${lang}/`)} aria-label={common.homeAria}>
+			<img src={withBase('tabys-logo.png')} alt={common.logoAlt} width="88" height="88" />
 		</a>
 
-		<nav class="nav" aria-label="Primary navigation">
+		<nav class="nav" aria-label={common.primaryNavAria}>
 			<a href="#services">{nav.services}</a>
 			<a href="#approach">{nav.approach}</a>
 			<a href="#industries">{nav.industries}</a>
@@ -32,11 +38,11 @@ const labels: Record<Locale, string> = { ru: 'RU', en: 'EN' };
 		</nav>
 
 		<div class="header-actions">
-			<div class="locale-switcher" aria-label="Language switcher">
+			<div class="locale-switcher" aria-label={common.languageSwitcherAria}>
 				{
 					locales.map((locale) => (
 						<a class:list={['locale-link', { active: locale === lang }]} href={withBase(`${locale}/`)}>
-							{labels[locale]}
+							{common.localeLabels[locale]}
 						</a>
 					))
 				}

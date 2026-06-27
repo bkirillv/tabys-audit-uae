@@ -6,6 +6,9 @@ interface Props {
 		description: string;
 		primary: string;
 		secondary: string;
+		metricsAria: string;
+		statementLabel: string;
+		statementTitle: string;
 		metrics: string[];
 	};
 }
@@ -23,7 +26,7 @@ const { hero } = Astro.props;
 				<a class="button button-primary" href="#contact">{hero.primary}</a>
 				<a class="button button-secondary" href="#services">{hero.secondary}</a>
 			</div>
-			<div class="metrics" aria-label="TABYS highlights">
+			<div class="metrics" aria-label={hero.metricsAria}>
 				{hero.metrics.map((metric) => <span>{metric}</span>)}
 			</div>
 		</div>
@@ -32,8 +35,8 @@ const { hero } = Astro.props;
 			<div class="wave wave-blue"></div>
 			<div class="wave wave-orange"></div>
 			<div class="statement-card">
-				<span class="statement-label">TABYS</span>
-				<strong>Audit-ready finance rhythm</strong>
+				<span class="statement-label">{hero.statementLabel}</span>
+				<strong>{hero.statementTitle}</strong>
 				<div class="bars">
 					<i></i>
 					<i></i>

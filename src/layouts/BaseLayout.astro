@@ -6,9 +6,16 @@ interface Props {
 	lang: Locale;
 	title: string;
 	description: string;
+	common: {
+		brandName: string;
+		logoAlt: string;
+		schemaAreaServed: string;
+		schemaAvailableLanguages: string[];
+		schemaServiceTypes: string[];
+	};
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, common } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://tabys.consulting');
 const canonicalUrl = new URL(withBase(`${lang}/`), siteUrl);
 const imageUrl = new URL(withBase('tabys-logo.png'), siteUrl);
@@ -20,17 +27,17 @@ const alternateLocales = locales.filter((locale) => locale !== lang);
 const structuredData = {
 	'@context': 'https://schema.org',
 	'@type': 'AccountingService',
-	name: 'TABYS Audit & Consulting',
+	name: common.brandName,
 	url: canonicalUrl.toString(),
 	logo: imageUrl.toString(),
 	image: imageUrl.toString(),
 	description,
 	areaServed: {
 		'@type': 'Country',
-		name: 'United Arab Emirates',
+		name: common.schemaAreaServed,
 	},
-	availableLanguage: ['English', 'Russian'],
-	serviceType: ['Accounting consulting', 'Bookkeeping', 'VAT consulting', 'Corporate tax advisory'],
+	availableLanguage: common.schemaAvailableLanguages,
+	serviceType: common.schemaServiceTypes,
 };
 ---
 
@@ -55,12 +62,12 @@ const structuredData = {
 		<link rel="apple-touch-icon" sizes="180x180" href={withBase('apple-touch-icon.png')} />
 		<link rel="preload" as="image" href={withBase('tabys-logo.png')} />
 		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="TABYS Audit & Consulting" />
+		<meta property="og:site_name" content={common.brandName} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalUrl.toString()} />
 		<meta property="og:image" content={imageUrl.toString()} />
-		<meta property="og:image:alt" content="TABYS Audit & Consulting logo" />
+		<meta property="og:image:alt" content={common.logoAlt} />
 		<meta property="og:locale" content={ogLocale[lang]} />
 		{alternateLocales.map((locale) => <meta property="og:locale:alternate" content={ogLocale[locale]} />)}
 		<meta name="twitter:card" content="summary" />

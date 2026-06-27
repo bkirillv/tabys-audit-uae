@@ -1,8 +1,10 @@
 ---
+import { ui } from '../i18n';
 import { withBase } from '../site';
 
 const englishTarget = withBase('en/');
 const russianTarget = withBase('ru/');
+const redirect = ui.en.redirect;
 ---
 
 <!doctype html>
@@ -12,7 +14,7 @@ const russianTarget = withBase('ru/');
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="noindex" />
 		<link rel="canonical" href={englishTarget} />
-		<title>Redirecting to TABYS</title>
+		<title>{redirect.title}</title>
 		<script is:inline define:vars={{ englishTarget, russianTarget }}>
 			const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
 			const hasRussian = languages.some((language) => language.toLowerCase().startsWith('ru'));
@@ -24,8 +26,8 @@ const russianTarget = withBase('ru/');
 		</script>
 	</head>
 	<body>
-		<p>Choose your language:</p>
-		<a href={englishTarget}>English</a>
-		<a href={russianTarget}>Русский</a>
+		<p>{redirect.chooseLanguage}</p>
+		<a href={englishTarget}>{redirect.englishLink}</a>
+		<a href={russianTarget}>{ui.ru.redirect.russianLink}</a>
 	</body>
 </html>

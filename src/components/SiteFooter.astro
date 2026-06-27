@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../i18n';
+import { withBase } from '../site';
 
 interface Props {
 	lang: Locale;
@@ -11,8 +12,8 @@ const { lang, text } = Astro.props;
 
 <footer class="site-footer">
 	<div class="container footer-inner">
-		<a href={`/${lang}/`} aria-label="TABYS home">
-			<img src="/tabys-logo.png" alt="TABYS Audit Consulting" width="86" height="86" />
+		<a href={withBase(`${lang}/`)} aria-label="TABYS home">
+			<img src={withBase('tabys-logo.png')} alt="TABYS Audit Consulting" width="86" height="86" />
 		</a>
 		<p>{text}</p>
 	</div>

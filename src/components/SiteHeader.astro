@@ -1,5 +1,6 @@
 ---
 import { locales, type Locale } from '../i18n';
+import { withBase } from '../site';
 
 interface Props {
 	lang: Locale;
@@ -19,8 +20,8 @@ const labels: Record<Locale, string> = { ru: 'RU', en: 'EN' };
 
 <header class="site-header">
 	<div class="container header-inner">
-		<a class="brand" href={`/${lang}/`} aria-label="TABYS home">
-			<img src="/tabys-logo.png" alt="TABYS Audit Consulting" width="88" height="88" />
+		<a class="brand" href={withBase(`${lang}/`)} aria-label="TABYS home">
+			<img src={withBase('tabys-logo.png')} alt="TABYS Audit Consulting" width="88" height="88" />
 		</a>
 
 		<nav class="nav" aria-label="Primary navigation">
@@ -34,7 +35,7 @@ const labels: Record<Locale, string> = { ru: 'RU', en: 'EN' };
 			<div class="locale-switcher" aria-label="Language switcher">
 				{
 					locales.map((locale) => (
-						<a class:list={['locale-link', { active: locale === lang }]} href={`/${locale}/`}>
+						<a class:list={['locale-link', { active: locale === lang }]} href={withBase(`${locale}/`)}>
 							{labels[locale]}
 						</a>
 					))

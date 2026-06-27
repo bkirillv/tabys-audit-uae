@@ -1,3 +1,5 @@
 ---
-return Astro.redirect('/en/');
+import { withBase } from '../site';
+
+return Astro.redirect(withBase('en/'));
 ---

@@ -10,6 +10,5 @@ export default defineConfig({
 			locales: ['en', 'ru'],
 		}),
 	],
-	site: 'https://bkirillv.github.io',
-	base: '/tabys-audit-uae',
+	site: 'https://tabysaudit.ae',
 });

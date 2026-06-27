@@ -1,4 +1,4 @@
-export const siteBase = '/tabys-audit-uae/';
+export const siteBase = '/';
 
 export function withBase(path: string) {
 	return `${siteBase}${path.replace(/^\//, '')}`;

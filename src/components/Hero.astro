@@ -13,6 +13,7 @@ interface Props {
 	hero: {
 		eyebrow: string;
 		title: string;
+		titleLines?: string[];
 		description: string;
 		primary: string;
 		secondary: string;
@@ -22,6 +23,7 @@ interface Props {
 }
 
 const { hero, trust } = Astro.props;
+const titleLines = hero.titleLines ?? [hero.title];
 ---
 
 <section class="hero">
@@ -29,10 +31,19 @@ const { hero, trust } = Astro.props;
 		<div class="container hero-grid">
 			<div class="hero-content">
 				<p class="eyebrow">{hero.eyebrow}</p>
-				<h1>{hero.title}</h1>
+				<h1>
+					{
+						titleLines.map((line, index) => (
+							<>
+								{line}
+								{index < titleLines.length - 1 && <br />}
+							</>
+						))
+					}
+				</h1>
 				<p class="hero-copy">{hero.description}</p>
 				<div class="hero-actions">
-					<a class="button button-primary" href="#contact">{hero.primary}</a>
+					<a class="button button-primary" href="#consultation">{hero.primary}</a>
 					<a class="button button-secondary" href="#services">{hero.secondary}</a>
 				</div>
 			</div>
@@ -68,11 +79,11 @@ const { hero, trust } = Astro.props;
 	}
 
 	h1 {
-		max-width: 720px;
+		max-width: 760px;
 		margin: 0;
 		color: var(--ink);
-		font-size: clamp(2rem, 3.7vw, 3.35rem);
-		line-height: 1.04;
+		font-size: clamp(2rem, 3.25vw, 3.05rem);
+		line-height: 1.12;
 		letter-spacing: 0;
 	}
 
@@ -132,7 +143,7 @@ const { hero, trust } = Astro.props;
 
 	@media (max-width: 620px) {
 		h1 {
-			font-size: clamp(2.35rem, 13vw, 3.5rem);
+			font-size: clamp(2.1rem, 10.5vw, 3rem);
 			line-height: 1.08;
 		}
 

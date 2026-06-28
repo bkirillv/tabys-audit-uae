@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "TABYS Audit & Consulting | Бухгалтерский консалтинг в ОАЭ",
-    "description": "Мультиязычная лендинговая страница TABYS для бухгалтерского учета, VAT, corporate tax и финансового консалтинга."
+    "title": "Бухгалтерские услуги в Дубае и ОАЭ | VAT, Corporate Tax | TABYS",
+    "description": "Бухгалтерское сопровождение, UAE VAT, Corporate Tax, payroll, подготовка к аудиту и IFRS отчетность для компаний в Дубае и ОАЭ.",
+    "keywords": "бухгалтерские услуги в Дубае, бухгалтерское сопровождение ОАЭ, бухгалтер в Дубае, бухгалтерский консалтинг ОАЭ, ведение учета UAE, восстановление бухгалтерского учета, UAE VAT, VAT registration UAE, VAT return UAE, Corporate Tax UAE, регистрация Corporate Tax UAE, налоговый консультант ОАЭ, финансовая отчетность IFRS, payroll UAE, подготовка к аудиту ОАЭ, accounting services Dubai, bookkeeping UAE"
   },
   "common": {
     "brandName": "TABYS Audit & Consulting",
@@ -15,7 +16,7 @@
     },
     "schemaAreaServed": "Объединенные Арабские Эмираты",
     "schemaAvailableLanguages": ["Английский", "Русский"],
-    "schemaServiceTypes": ["Бухгалтерский консалтинг", "Бухгалтерское сопровождение", "Консалтинг по VAT", "Консалтинг по Corporate Tax"]
+    "schemaServiceTypes": ["Бухгалтерские услуги в Дубае", "Бухгалтерское сопровождение в ОАЭ", "Ведение и восстановление бухгалтерского учета", "UAE VAT registration and return filing", "UAE Corporate Tax registration and filing", "Финансовая отчетность по IFRS", "Payroll и HR support в ОАЭ", "Подготовка к аудиту", "Management reporting", "Налоговый консалтинг для компаний в ОАЭ"]
   },
   "redirect": {
     "title": "Переход на TABYS",
@@ -25,14 +26,15 @@
   },
   "nav": {
     "services": "Услуги",
-    "approach": "Подход",
-    "industries": "Отрасли",
+    "approach": "Направление",
+    "industries": "Сферы бизнеса",
     "contact": "Контакты",
     "cta": "Получить консультацию"
   },
   "hero": {
     "eyebrow": "Бухгалтерский и налоговый Консалтинг в ОАЭ",
-    "title": "Надежный учет. прозрачная отчетность. спокойствие в бизнесе.",
+    "title": "Надежный учет. Прозрачная отчетность. Спокойствие в бизнесе.",
+    "titleLines": ["Надежный учет.", "Прозрачная отчетность.", "Спокойствие в бизнесе."],
     "description": "Комплексные бухгалтерские и налоговые услуги в ОАЭ в соответствии с требованиями законодательства и международными стандартами.",
     "primary": "Получить консультацию",
     "secondary": "Наши услуги",
@@ -128,7 +130,7 @@
       { "title": "Опыт работы с компаниями в ОАЭ", "icon": "corporate" },
       { "title": "Русский и английский языки", "icon": "messages" },
       { "title": "Подготовка к аудиту круглый год", "icon": "audit" },
-      { "title": "Конфиденциальность и безопасность", "icon": "globe" },
+      { "title": "Конфиденциальность\nи безопасность", "icon": "globe" },
       { "title": "Multi-currency expertise", "icon": "lock" }
     ]
   },

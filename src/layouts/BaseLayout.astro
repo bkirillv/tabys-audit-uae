@@ -6,6 +6,12 @@ interface Props {
 	lang: Locale;
 	title: string;
 	description: string;
+	keywords: string;
+	contact: {
+		phone: string;
+		email: string;
+		address: string;
+	};
 	common: {
 		brandName: string;
 		logoAlt: string;
@@ -15,10 +21,12 @@ interface Props {
 	};
 }
 
-const { lang, title, description, common } = Astro.props;
+const { lang, title, description, keywords, contact, common } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://tabys.consulting');
 const canonicalUrl = new URL(withBase(`${lang}/`), siteUrl);
 const imageUrl = new URL(withBase('tabys-logo-wide.png'), siteUrl);
+const cleanPhone = contact.phone.replace(/\D/g, '');
+const phoneHref = cleanPhone ? `+${cleanPhone}` : contact.phone;
 const ogLocale: Record<Locale, string> = {
 	en: 'en_US',
 	ru: 'ru_RU',
@@ -26,18 +34,86 @@ const ogLocale: Record<Locale, string> = {
 const alternateLocales = locales.filter((locale) => locale !== lang);
 const structuredData = {
 	'@context': 'https://schema.org',
-	'@type': 'AccountingService',
-	name: common.brandName,
-	url: canonicalUrl.toString(),
-	logo: imageUrl.toString(),
-	image: imageUrl.toString(),
-	description,
-	areaServed: {
-		'@type': 'Country',
-		name: common.schemaAreaServed,
-	},
-	availableLanguage: common.schemaAvailableLanguages,
-	serviceType: common.schemaServiceTypes,
+	'@graph': [
+		{
+			'@type': ['Organization', 'AccountingService', 'ProfessionalService'],
+			'@id': new URL(withBase('#organization'), siteUrl).toString(),
+			name: common.brandName,
+			url: siteUrl.toString(),
+			logo: imageUrl.toString(),
+			image: imageUrl.toString(),
+			description,
+			email: contact.email,
+			telephone: phoneHref,
+			priceRange: '$$',
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: lang === 'ru' ? 'Дубай' : 'Dubai',
+				addressCountry: 'AE',
+				streetAddress: contact.address,
+			},
+			contactPoint: {
+				'@type': 'ContactPoint',
+				telephone: phoneHref,
+				email: contact.email,
+				contactType: lang === 'ru' ? 'Консультация по бухгалтерским услугам' : 'Accounting services consultation',
+				areaServed: 'AE',
+				availableLanguage: common.schemaAvailableLanguages,
+			},
+			areaServed: [
+				{ '@type': 'City', name: lang === 'ru' ? 'Дубай' : 'Dubai' },
+				{ '@type': 'Country', name: common.schemaAreaServed },
+				{ '@type': 'AdministrativeArea', name: lang === 'ru' ? 'ОАЭ' : 'United Arab Emirates' },
+			],
+			availableLanguage: common.schemaAvailableLanguages,
+			serviceType: common.schemaServiceTypes,
+			knowsAbout: keywords.split(',').map((keyword) => keyword.trim()).filter(Boolean),
+			hasOfferCatalog: {
+				'@type': 'OfferCatalog',
+				name: lang === 'ru' ? 'Бухгалтерские услуги TABYS' : 'TABYS accounting services',
+				itemListElement: common.schemaServiceTypes.map((service) => ({
+					'@type': 'Offer',
+					itemOffered: {
+						'@type': 'Service',
+						name: service,
+						areaServed: common.schemaAreaServed,
+						provider: { '@id': new URL(withBase('#organization'), siteUrl).toString() },
+					},
+				})),
+			},
+		},
+		{
+			'@type': 'WebSite',
+			'@id': new URL(withBase('#website'), siteUrl).toString(),
+			name: common.brandName,
+			url: siteUrl.toString(),
+			inLanguage: lang,
+			publisher: { '@id': new URL(withBase('#organization'), siteUrl).toString() },
+		},
+		{
+			'@type': 'WebPage',
+			'@id': canonicalUrl.toString(),
+			url: canonicalUrl.toString(),
+			name: title,
+			description,
+			isPartOf: { '@id': new URL(withBase('#website'), siteUrl).toString() },
+			about: { '@id': new URL(withBase('#organization'), siteUrl).toString() },
+			primaryImageOfPage: imageUrl.toString(),
+			inLanguage: lang,
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': new URL(withBase(`${lang}/#breadcrumb`), siteUrl).toString(),
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: common.brandName,
+					item: canonicalUrl.toString(),
+				},
+			],
+		},
+	],
 };
 ---
 
@@ -47,8 +123,17 @@ const structuredData = {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content={keywords} />
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="author" content={common.brandName} />
+		<meta name="publisher" content={common.brandName} />
+		<meta name="application-name" content={common.brandName} />
+		<meta name="format-detection" content="telephone=yes" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<meta name="geo.region" content="AE-DU" />
+		<meta name="geo.placename" content={lang === 'ru' ? 'Дубай, ОАЭ' : 'Dubai, United Arab Emirates'} />
+		<meta name="geo.position" content="25.2048;55.2708" />
+		<meta name="ICBM" content="25.2048, 55.2708" />
 		<meta name="theme-color" content="#1297df" />
 		<link rel="canonical" href={canonicalUrl.toString()} />
 		{
@@ -67,9 +152,12 @@ const structuredData = {
 		<meta property="og:url" content={canonicalUrl.toString()} />
 		<meta property="og:image" content={imageUrl.toString()} />
 		<meta property="og:image:alt" content={common.logoAlt} />
+		<meta property="og:image:width" content="1080" />
+		<meta property="og:image:height" content="540" />
+		<meta property="og:image:type" content="image/png" />
 		<meta property="og:locale" content={ogLocale[lang]} />
 		{alternateLocales.map((locale) => <meta property="og:locale:alternate" content={ogLocale[locale]} />)}
-		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={imageUrl.toString()} />
@@ -109,7 +197,7 @@ const structuredData = {
 
 	html {
 		scroll-behavior: smooth;
-		scroll-padding-top: 98px;
+		scroll-padding-top: var(--header-height);
 	}
 
 	body {
@@ -224,10 +312,6 @@ const structuredData = {
 		color: var(--blue-dark);
 	}
 
-	[id] {
-		scroll-margin-top: 98px;
-	}
-
 	@media (max-width: 760px) {
 		:root {
 			--header-height: 74px;
@@ -235,11 +319,7 @@ const structuredData = {
 		}
 
 		html {
-			scroll-padding-top: 86px;
-		}
-
-		[id] {
-			scroll-margin-top: 86px;
+			scroll-padding-top: var(--header-height);
 		}
 
 		.container {

@@ -14,7 +14,7 @@ interface Props {
 const { title, items } = Astro.props;
 ---
 
-<section class="why-trusted" aria-labelledby="why-trusted-title">
+<section id="why-trusted" class="why-trusted" aria-labelledby="why-trusted-title">
 	<div class="container panel">
 		<h2 id="why-trusted-title">{title}</h2>
 		<div class="accent"></div>
@@ -88,12 +88,12 @@ const { title, items } = Astro.props;
 		z-index: 1;
 		display: grid;
 		grid-template-columns: repeat(6, minmax(0, 1fr));
-		gap: clamp(14px, 2vw, 24px);
+		gap: clamp(18px, 2.6vw, 34px);
 	}
 
 	.reason {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: 38px minmax(0, 1fr);
 		align-items: center;
 		gap: 12px;
 		min-width: 0;
@@ -108,9 +108,14 @@ const { title, items } = Astro.props;
 	}
 
 	strong {
+		min-width: 0;
 		color: rgba(255, 255, 255, 0.86);
-		font-size: 0.86rem;
-		line-height: 1.35;
+		font-size: clamp(0.72rem, 0.68vw, 0.78rem);
+		line-height: 1.32;
+		white-space: pre-line;
+		overflow-wrap: normal;
+		word-break: normal;
+		hyphens: none;
 	}
 
 	@media (max-width: 1040px) {

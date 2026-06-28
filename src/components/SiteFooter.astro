@@ -3,40 +3,100 @@ import { Image } from 'astro:assets';
 import tabysLogo from '../assets/tabys-logo.png';
 import type { Locale } from '../i18n';
 import { withBase } from '../site';
+import MaterialIcon from './MaterialIcon.astro';
 
 interface Props {
 	lang: Locale;
 	text: string;
+	contactTitle: string;
+	contact: {
+		phoneLabel: string;
+		emailLabel: string;
+		addressLabel: string;
+		phone: string;
+		email: string;
+		address: string;
+	};
 	common: {
 		logoAlt: string;
 		homeAria: string;
 	};
 }
 
-const { lang, text, common } = Astro.props;
+const { lang, text, contactTitle, contact, common } = Astro.props;
 ---
 
-<footer class="site-footer">
+<footer id="contact" class="site-footer">
 	<div class="container footer-inner">
-		<a class="footer-brand" href={withBase(`${lang}/`)} aria-label={common.homeAria}>
-			<Image src={tabysLogo} alt={common.logoAlt} width={112} height={112} />
-		</a>
-		<p>{text}</p>
+		<div class="footer-main">
+			<a class="footer-brand" href={withBase(`${lang}/`)} aria-label={common.homeAria}>
+				<Image src={tabysLogo} alt={common.logoAlt} width={112} height={112} />
+			</a>
+			<p class="footer-text">{text}</p>
+		</div>
+
+		<div class="footer-contacts">
+			<h2 class="footer-title">{contactTitle}</h2>
+			<ul class="footer-contact-list">
+				<li class="footer-contact-item">
+					<span class="footer-contact-icon" aria-hidden="true">
+						<MaterialIcon name="phone" size={18} />
+					</span>
+					<a href={`tel:${contact.phone.replace(/\s/g, '')}`} aria-label={contact.phoneLabel}>{contact.phone}</a>
+				</li>
+				<li class="footer-contact-item">
+					<span class="footer-contact-icon" aria-hidden="true">
+						<MaterialIcon name="mail" size={18} />
+					</span>
+					<a href={`mailto:${contact.email}`} aria-label={contact.emailLabel}>{contact.email}</a>
+				</li>
+				<li class="footer-contact-item">
+					<span class="footer-contact-icon" aria-hidden="true">
+						<MaterialIcon name="pin" size={18} />
+					</span>
+					<span aria-label={contact.addressLabel}>{contact.address}</span>
+				</li>
+			</ul>
+		</div>
 	</div>
 </footer>
 
 <style>
 	.site-footer {
+		position: relative;
+		overflow: hidden;
 		background: linear-gradient(130deg, #03172d 0%, #041f3a 68%, #062c50 100%);
-		padding: 30px 0;
+		padding: clamp(34px, 5vw, 52px) 0;
 		color: #ffffff;
 	}
 
+	.site-footer::after {
+		position: absolute;
+		right: -78px;
+		bottom: -118px;
+		width: 260px;
+		height: 260px;
+		border-radius: 8px 0 0 0;
+		background: linear-gradient(145deg, rgba(31, 189, 228, 0.32), rgba(255, 122, 19, 0.78));
+		clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%);
+		content: "";
+		opacity: 0.76;
+	}
+
 	.footer-inner {
-		display: flex;
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
 		align-items: center;
 		justify-content: space-between;
-		gap: 20px;
+		gap: clamp(28px, 8vw, 120px);
+	}
+
+	.footer-main {
+		display: flex;
+		align-items: center;
+		gap: 22px;
 	}
 
 	.footer-brand {
@@ -46,10 +106,6 @@ const { lang, text, common } = Astro.props;
 		width: 104px;
 		height: 104px;
 		flex: 0 0 auto;
-		border: 1px solid rgba(255, 255, 255, 0.9);
-		border-radius: 8px;
-		background: #ffffff;
-		box-shadow: 0 18px 40px rgba(0, 8, 20, 0.22);
 	}
 
 	.footer-brand img {
@@ -58,17 +114,72 @@ const { lang, text, common } = Astro.props;
 		display: block;
 	}
 
-	p {
-		max-width: 560px;
+	.footer-text {
+		max-width: 430px;
 		margin: 0;
 		color: rgba(255, 255, 255, 0.72);
 		font-size: 0.92rem;
 		line-height: 1.55;
-		text-align: right;
 	}
 
-	@media (max-width: 560px) {
+	.footer-title {
+		margin: 0 0 16px;
+		color: #ffffff;
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	.footer-contact-list {
+		display: grid;
+		gap: 12px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.footer-contact-item {
+		display: grid;
+		grid-template-columns: 22px minmax(0, 1fr);
+		align-items: center;
+		gap: 10px;
+		color: rgba(255, 255, 255, 0.74);
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+
+	.footer-contact-item::marker {
+		content: "";
+	}
+
+	.footer-contact-icon {
+		display: inline-grid;
+		width: 22px;
+		height: 22px;
+		place-items: center;
+		color: rgba(31, 189, 228, 0.92);
+	}
+
+	.footer-contact-icon :global(svg) {
+		display: block;
+		color: rgba(31, 189, 228, 0.92);
+	}
+
+	a {
+		color: inherit;
+		transition: color 180ms ease;
+	}
+
+	a:hover {
+		color: #ffffff;
+	}
+
+	@media (max-width: 720px) {
 		.footer-inner {
+			grid-template-columns: 1fr;
+			align-items: flex-start;
+		}
+
+		.footer-main {
 			align-items: flex-start;
 			flex-direction: column;
 		}
@@ -82,8 +193,9 @@ const { lang, text, common } = Astro.props;
 			width: 80px;
 		}
 
-		p {
-			text-align: left;
+		.site-footer::after {
+			right: -120px;
+			bottom: -150px;
 		}
 	}
 </style>

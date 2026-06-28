@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "TABYS Audit & Consulting | Accounting consulting in the UAE",
-    "description": "A multilingual TABYS landing page for bookkeeping, VAT, corporate tax, and financial consulting services."
+    "title": "Accounting Services in Dubai, UAE | Bookkeeping, VAT & Tax | TABYS",
+    "description": "Accounting, bookkeeping, UAE VAT, Corporate Tax, payroll, audit preparation and IFRS reporting for businesses in Dubai and the UAE.",
+    "keywords": "accounting services Dubai, accounting services UAE, bookkeeping services Dubai, bookkeeping UAE, accounting firm Dubai, accountant Dubai, UAE VAT registration, VAT return filing UAE, UAE Corporate Tax registration, Corporate Tax filing UAE, tax consultant UAE, IFRS financial reporting UAE, payroll services UAE, audit preparation UAE, accounting cleanup Dubai, management reporting Dubai, Russian speaking accountant Dubai"
   },
   "common": {
     "brandName": "TABYS Audit & Consulting",
@@ -15,7 +16,7 @@
     },
     "schemaAreaServed": "United Arab Emirates",
     "schemaAvailableLanguages": ["English", "Russian"],
-    "schemaServiceTypes": ["Accounting consulting", "Bookkeeping", "VAT consulting", "Corporate tax advisory"]
+    "schemaServiceTypes": ["Accounting services in Dubai", "Bookkeeping services in the UAE", "Accounting cleanup and restoration", "UAE VAT registration and return filing", "UAE Corporate Tax registration and filing", "IFRS financial reporting", "Payroll and HR support in the UAE", "Audit preparation", "Management reporting", "Tax advisory for UAE companies"]
   },
   "redirect": {
     "title": "Redirecting to TABYS",
@@ -25,14 +26,15 @@
   },
   "nav": {
     "services": "Services",
-    "approach": "Approach",
-    "industries": "Industries",
+    "approach": "Why us",
+    "industries": "Who we serve",
     "contact": "Contacts",
     "cta": "Book a consultation"
   },
   "hero": {
     "eyebrow": "Accounting consulting for UAE businesses",
     "title": "Reliable books, transparent reporting, calmer business decisions.",
+    "titleLines": ["Reliable books.", "Transparent reporting.", "Calmer business decisions."],
     "description": "TABYS helps founders and companies manage accounting, prepare tax reporting, and make financial decisions with clear numbers.",
     "primary": "Schedule a call",
     "secondary": "View services",

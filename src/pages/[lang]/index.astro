@@ -19,7 +19,14 @@ const messages = ui[lang];
 const whatsappHref = `https://wa.me/${messages.contact.phone.replace(/\D/g, '')}`;
 ---
 
-<BaseLayout lang={lang} title={messages.meta.title} description={messages.meta.description} common={messages.common}>
+<BaseLayout
+	lang={lang}
+	title={messages.meta.title}
+	description={messages.meta.description}
+	keywords={messages.meta.keywords}
+	contact={messages.contact}
+	common={messages.common}
+>
 	<SiteHeader lang={lang} nav={messages.nav} ctaHref={whatsappHref} common={messages.common} />
 	<main>
 		<Hero hero={messages.hero} trust={messages.trust} />
@@ -36,5 +43,11 @@ const whatsappHref = `https://wa.me/${messages.contact.phone.replace(/\D/g, '')}
 		/>
 		<ContactSection contact={messages.contact} />
 	</main>
-	<SiteFooter lang={lang} text={messages.footer.text} common={messages.common} />
+	<SiteFooter
+		lang={lang}
+		text={messages.footer.text}
+		contactTitle={messages.nav.contact}
+		contact={messages.contact}
+		common={messages.common}
+	/>
 </BaseLayout>

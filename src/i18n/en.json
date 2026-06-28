@@ -110,7 +110,7 @@
   },
   "industries": {
     "eyebrow": "",
-    "title": "We work with companies across industries",
+    "title": "We support businesses in multiple industries",
     "items": [
       { "title": "Consulting", "icon": "briefcase" },
       { "title": "IT & Digital", "icon": "globe" },
@@ -153,7 +153,7 @@
     ]
   },
   "contact": {
-    "title": "Let's discuss your company's accounting and taxes",
+    "title": "accounting services for your business in the UAE.",
     "text": "Send us a request, and we will help you choose the right starting point: bookkeeping cleanup, ongoing support, or tax advisory.",
     "phoneLabel": "Phone",
     "emailLabel": "Email",

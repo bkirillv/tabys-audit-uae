@@ -69,12 +69,12 @@
       {
         "title": "Accounting setup",
         "icon": "receipt",
-        "points": ["Accounting structure selection", "Chart of accounts and workflows", "Opening balance restoration"]
+        "points": ["Bookkeeping and document processing", "Bank reconciliations", "Multi-currency accounting","Financial statement preparation"]
       },
       {
         "title": "UAE VAT",
         "icon": "invoice",
-        "points": ["VAT registration and deregistration", "Return preparation", "Input document review"]
+        "points": ["VAT registration", "VAT return preparation and filing", "Assistance with FTA inquiries and audits", "VAT corrections and amendments" ]
       },
       {
         "title": "UAE Corporate Tax",

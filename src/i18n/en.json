@@ -34,9 +34,7 @@
   "hero": {
     "eyebrow": "",
     "title": "Reliable books, transparent reporting, calmer business decisions.",
-    "titleLines": ["Accurate Accounting.
-Clear Financial Reporting.
-Confidence for Your Business."],
+    "titleLines": ["Accurate Accounting. Clear Financial Reporting. Confidence for Your Business."],
     "description": "TABYS helps founders and companies manage accounting, prepare tax reporting, and make financial decisions with clear numbers.",
     "primary": "Schedule a call",
     "secondary": "View services",

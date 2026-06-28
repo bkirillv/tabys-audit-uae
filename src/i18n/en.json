@@ -42,23 +42,23 @@
   },
   "trust": [
     {
-      "title": "Clear processes",
-      "text": "We define tasks, deadlines, and ownership so accounting stays organized.",
+      "title": "Solutions",
+      "text": "Practical expertise. Real solutions that make a difference.",
       "icon": "users"
     },
     {
-      "title": "Regulatory alignment",
-      "text": "Mock support for VAT, Corporate Tax, ESR, and essential compliance checks.",
+      "title": "UAE Compliance",
+      "text": "We work in full compliance with UAE VAT, Corporate Tax, and IFRS requirements.",
       "icon": "shield"
     },
     {
       "title": "Transparent communication",
-      "text": "Reports and updates in plain language, focused on decisions.",
+      "text": "Support in Russian and English.",
       "icon": "messages"
     },
     {
-      "title": "End-to-end support",
-      "text": "From initial bookkeeping setup to recurring reporting and consultations.",
+      "title": "Modern accounting systems",
+      "text": "Experience with Zoho Books, QuickBooks, FirstBit and other systems.",
       "icon": "settings"
     }
   ],

@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Accounting Services in Dubai, UAE | Bookkeeping, VAT & Tax | TABYS",
+    "title": "TabysAuditConsulting LLC Accounting Consulting in the UAE",
     "description": "Accounting, bookkeeping, UAE VAT, Corporate Tax, payroll, audit preparation and IFRS reporting for businesses in Dubai and the UAE.",
     "keywords": "accounting services Dubai, accounting services UAE, bookkeeping services Dubai, bookkeeping UAE, accounting firm Dubai, accountant Dubai, UAE VAT registration, VAT return filing UAE, UAE Corporate Tax registration, Corporate Tax filing UAE, tax consultant UAE, IFRS financial reporting UAE, payroll services UAE, audit preparation UAE, accounting cleanup Dubai, management reporting Dubai, Russian speaking accountant Dubai"
   },
   "common": {
-    "brandName": "TABYS Audit & Consulting",
-    "logoAlt": "TABYS Audit & Consulting logo",
+    "brandName": "TabysAuditConsulting LLC",
+    "logoAlt": "TabysAuditConsulting LLC logo",
     "homeAria": "TABYS home",
     "primaryNavAria": "Primary navigation",
     "languageSwitcherAria": "Language switcher",
@@ -158,12 +158,12 @@
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "addressLabel": "Address",
-    "phone": "+971 50 000 0000",
+    "phone": "+971 58 537 5696",
     "email": "hello@tabys.consulting",
     "address": "Dubai, United Arab Emirates",
     "cta": "Contact us"
   },
   "footer": {
-    "text": "TABYS Audit & Consulting. Accounting consulting and business support."
+    "text": "TabysAuditConsulting LLC. Accounting consulting and business support."
   }
 }

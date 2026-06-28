@@ -51,7 +51,7 @@ const whatsappHref = `https://wa.me/${contact.phone.replace(/\D/g, '')}`;
 		position: relative;
 		overflow: hidden;
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-columns: minmax(0, 1fr) minmax(320px, 36%);
 		align-items: center;
 		gap: clamp(24px, 6vw, 80px);
 		border: 1px solid rgba(210, 228, 242, 0.92);
@@ -97,6 +97,7 @@ const whatsappHref = `https://wa.me/${contact.phone.replace(/\D/g, '')}`;
 	.contact-cta {
 		position: relative;
 		z-index: 1;
+		justify-self: start;
 		min-width: min(280px, 100%);
 	}
 

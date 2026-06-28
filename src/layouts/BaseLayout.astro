@@ -70,7 +70,7 @@ const structuredData = {
 			knowsAbout: keywords.split(',').map((keyword) => keyword.trim()).filter(Boolean),
 			hasOfferCatalog: {
 				'@type': 'OfferCatalog',
-				name: lang === 'ru' ? 'Бухгалтерские услуги TABYS' : 'TABYS accounting services',
+				name: title,
 				itemListElement: common.schemaServiceTypes.map((service) => ({
 					'@type': 'Offer',
 					itemOffered: {

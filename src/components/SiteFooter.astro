@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import tabysLogo from '../assets/tabys-logo.png';
+import tabysFooterLogo from '../assets/tabys-footer-logo.png';
 import type { Locale } from '../i18n';
 import { withBase } from '../site';
 import MaterialIcon from './MaterialIcon.astro';
@@ -30,7 +30,7 @@ const { lang, text, contactTitle, contact, common } = Astro.props;
 	<div class="container footer-inner">
 		<div class="footer-main">
 			<a class="footer-brand" href={withBase(`${lang}/`)} aria-label={common.homeAria}>
-				<Image src={tabysLogo} alt={common.logoAlt} width={112} height={112} />
+				<Image src={tabysFooterLogo} alt={common.logoAlt} width={112} height={112} />
 			</a>
 			<p class="footer-text">{text}</p>
 		</div>
@@ -103,13 +103,13 @@ const { lang, text, contactTitle, contact, common } = Astro.props;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 104px;
-		height: 104px;
+		width: 148px;
+		height: 148px;
 		flex: 0 0 auto;
 	}
 
 	.footer-brand img {
-		width: 86px;
+		width: 148px;
 		height: auto;
 		display: block;
 	}
@@ -185,12 +185,12 @@ const { lang, text, contactTitle, contact, common } = Astro.props;
 		}
 
 		.footer-brand {
-			width: 96px;
-			height: 96px;
+			width: 128px;
+			height: 128px;
 		}
 
 		.footer-brand img {
-			width: 80px;
+			width: 128px;
 		}
 
 		.site-footer::after {

@@ -32,7 +32,7 @@
     "cta": "Book a consultation"
   },
   "hero": {
-    "eyebrow": "Accounting consulting for UAE businesses",
+    "eyebrow": "",
     "title": "Reliable books, transparent reporting, calmer business decisions.",
     "titleLines": ["Reliable books.", "Transparent reporting.", "Calmer business decisions."],
     "description": "TABYS helps founders and companies manage accounting, prepare tax reporting, and make financial decisions with clear numbers.",
@@ -63,7 +63,7 @@
     }
   ],
   "services": {
-    "eyebrow": "What we do",
+    "eyebrow": "",
     "title": "Comprehensive support for your business",
     "items": [
       {
@@ -109,7 +109,7 @@
     ]
   },
   "industries": {
-    "eyebrow": "Who we work with",
+    "eyebrow": "",
     "title": "We work with companies across industries",
     "items": [
       { "title": "Consulting", "icon": "briefcase" },

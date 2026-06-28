@@ -79,17 +79,17 @@
       {
         "title": "UAE Corporate Tax",
         "icon": "corporate",
-        "points": ["Tax position review", "Calculation preparation", "Filing support"]
+        "points": ["Corporate Tax registration", "Corporate Tax return preparation and filing", "Accounting review and preparation of supporting working papers", "Filing coordination and tax advisory" ]
       },
       {
         "title": "Financial reporting",
         "icon": "chart",
-        "points": ["Monthly management reports", "P&L, cash flow, balance sheet", "Owner dashboards"]
+        "points": ["IFRS-compliant financial reporting", "Management reporting", "Profit & Loss Statement, Balance Sheet, and Cash Flow Statement", "Key performance indicator (KPI) analysis" ]
       },
       {
         "title": "Audit preparation",
         "icon": "audit",
-        "points": ["Schedules and reconciliations", "Supporting documents", "Accounting review", "Audit request support"]
+        "points": ["Schedules and reconciliations", "Supporting documents", "Review of accounting accuracy", "Audit request support", "Support with audit requests" ]
       },
       {
         "title": "Payroll & HR Support",
@@ -99,12 +99,12 @@
       {
         "title": "Accounting restoration",
         "icon": "refresh",
-        "points": ["-", "-", "-", "-"]
+        "points": ["Accounting restoration", "Review of prior periods", "Review of prior periods", "Organization and cleanup of financial records"]
       },
       {
         "title": "Related services",
         "icon": "link",
-        "points": ["-", "-", "-", "-"]
+        "points": ["Assistance with opening bank accounts", "Preparation of bank documentation", "UBO/KYC support", "Support for corporate banking inquiries"]
       }
     ]
   },

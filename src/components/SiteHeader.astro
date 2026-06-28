@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import tabysLogo from '../assets/tabys-logo.png';
+import tabysLogoWide from '../assets/tabys-logo-wide.png';
 import { locales, type Locale } from '../i18n';
 import { withBase } from '../site';
 
@@ -29,7 +29,7 @@ const { lang, nav, ctaHref, common } = Astro.props;
 <header class="site-header">
 	<div class="container header-inner">
 		<a class="brand" href={withBase(`${lang}/`)} aria-label={common.homeAria}>
-			<Image src={tabysLogo} alt={common.logoAlt} width={88} height={88} />
+			<Image src={tabysLogoWide} alt={common.logoAlt} width={180} height={90} priority />
 		</a>
 
 		<nav class="nav" aria-label={common.primaryNavAria}>
@@ -78,7 +78,7 @@ const { lang, nav, ctaHref, common } = Astro.props;
 	}
 
 	.brand img {
-		width: 96px;
+		width: 142px;
 		height: auto;
 	}
 
@@ -156,7 +156,7 @@ const { lang, nav, ctaHref, common } = Astro.props;
 		}
 
 		.brand img {
-			width: 82px;
+			width: 112px;
 		}
 
 		.header-actions {

@@ -1,0 +1,131 @@
+---
+import MaterialIcon from './MaterialIcon.astro';
+
+interface Item {
+	title: string;
+	icon: string;
+}
+
+interface Props {
+	title: string;
+	items: Item[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section class="why-trusted" aria-labelledby="why-trusted-title">
+	<div class="container panel">
+		<h2 id="why-trusted-title">{title}</h2>
+		<div class="accent"></div>
+		<div class="reasons">
+			{
+				items.map((item) => (
+					<div class="reason">
+						<span class="reason-icon" aria-hidden="true">
+							<MaterialIcon name={item.icon} size={28} />
+						</span>
+						<strong>{item.title}</strong>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.why-trusted {
+		padding: 0 0 clamp(46px, 7vw, 78px);
+		background: #ffffff;
+	}
+
+	.panel {
+		position: relative;
+		overflow: hidden;
+		border-radius: 8px;
+		background:
+			radial-gradient(circle at 90% 110%, rgba(18, 151, 223, 0.2), transparent 24rem),
+			linear-gradient(135deg, #03172d 0%, #052341 58%, #082f55 100%);
+		padding: clamp(24px, 4vw, 34px);
+		color: #ffffff;
+	}
+
+	.panel::after {
+		position: absolute;
+		right: -80px;
+		bottom: -170px;
+		width: 390px;
+		height: 390px;
+		border: 1px solid rgba(31, 189, 228, 0.22);
+		border-radius: 50%;
+		box-shadow:
+			-22px -22px 0 -21px rgba(31, 189, 228, 0.22),
+			-44px -44px 0 -43px rgba(31, 189, 228, 0.18),
+			-66px -66px 0 -65px rgba(31, 189, 228, 0.14);
+		content: "";
+	}
+
+	h2 {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		font-size: clamp(1.25rem, 2vw, 1.55rem);
+		line-height: 1.2;
+	}
+
+	.accent {
+		position: relative;
+		z-index: 1;
+		width: 42px;
+		height: 3px;
+		margin: 10px 0 22px;
+		border-radius: 999px;
+		background: var(--orange);
+	}
+
+	.reasons {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+		gap: clamp(14px, 2vw, 24px);
+	}
+
+	.reason {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		gap: 12px;
+		min-width: 0;
+	}
+
+	.reason-icon {
+		display: grid;
+		width: 38px;
+		height: 38px;
+		place-items: center;
+		color: rgba(255, 255, 255, 0.88);
+	}
+
+	strong {
+		color: rgba(255, 255, 255, 0.86);
+		font-size: 0.86rem;
+		line-height: 1.35;
+	}
+
+	@media (max-width: 1040px) {
+		.reasons {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 620px) {
+		.panel {
+			padding: 24px 20px;
+		}
+
+		.reasons {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

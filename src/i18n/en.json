@@ -36,27 +36,28 @@
     "description": "TABYS helps founders and companies manage accounting, prepare tax reporting, and make financial decisions with clear numbers.",
     "primary": "Schedule a call",
     "secondary": "View services",
-    "metricsAria": "TABYS highlights",
-    "statementLabel": "TABYS",
-    "statementTitle": "Audit-ready finance rhythm",
-    "metrics": ["7+ years of experience", "UAE VAT and Corporate Tax"]
+    "imageAlt": "Abstract blue and orange TABYS wave"
   },
   "trust": [
     {
       "title": "Clear processes",
-      "text": "We define tasks, deadlines, and ownership so accounting stays organized."
+      "text": "We define tasks, deadlines, and ownership so accounting stays organized.",
+      "icon": "users"
     },
     {
       "title": "Regulatory alignment",
-      "text": "Mock support for VAT, Corporate Tax, ESR, and essential compliance checks."
+      "text": "Mock support for VAT, Corporate Tax, ESR, and essential compliance checks.",
+      "icon": "shield"
     },
     {
       "title": "Transparent communication",
-      "text": "Reports and updates in plain language, focused on decisions."
+      "text": "Reports and updates in plain language, focused on decisions.",
+      "icon": "messages"
     },
     {
       "title": "End-to-end support",
-      "text": "From initial bookkeeping setup to recurring reporting and consultations."
+      "text": "From initial bookkeeping setup to recurring reporting and consultations.",
+      "icon": "settings"
     }
   ],
   "services": {
@@ -65,33 +66,71 @@
     "items": [
       {
         "title": "Accounting setup",
+        "icon": "receipt",
         "points": ["Accounting structure selection", "Chart of accounts and workflows", "Opening balance restoration"]
       },
       {
         "title": "UAE VAT",
+        "icon": "invoice",
         "points": ["VAT registration and deregistration", "Return preparation", "Input document review"]
       },
       {
         "title": "UAE Corporate Tax",
+        "icon": "corporate",
         "points": ["Tax position review", "Calculation preparation", "Filing support"]
       },
       {
         "title": "Financial reporting",
+        "icon": "chart",
         "points": ["Monthly management reports", "P&L, cash flow, balance sheet", "Owner dashboards"]
       },
       {
-        "title": "Payroll and WPS",
-        "points": ["Salary calculations", "Payroll schedules", "HR document support"]
+        "title": "Audit preparation",
+        "icon": "audit",
+        "points": ["Schedules and reconciliations", "Supporting documents", "Accounting review", "Audit request support"]
       },
       {
-        "title": "Advisory services",
-        "points": ["Financial model review", "Audit preparation", "Process optimization"]
+        "title": "Payroll & HR Support",
+        "icon": "group",
+        "points": ["Salary calculations", "WPS support", "Leave and EOS calculations", "Employee accounting support"]
+      },
+      {
+        "title": "Accounting restoration",
+        "icon": "refresh",
+        "points": ["-", "-", "-", "-"]
+      },
+      {
+        "title": "Related services",
+        "icon": "link",
+        "points": ["-", "-", "-", "-"]
       }
     ]
   },
   "industries": {
+    "eyebrow": "Who we work with",
     "title": "We work with companies across industries",
-    "items": ["E-commerce", "HoReCa", "Real Estate", "Consulting", "Trading", "IT & Digital", "Beauty & Wellness", "Logistics"]
+    "items": [
+      { "title": "Consulting", "icon": "briefcase" },
+      { "title": "IT & Digital", "icon": "globe" },
+      { "title": "E-commerce", "icon": "cart" },
+      { "title": "Trading companies", "icon": "store" },
+      { "title": "Service companies", "icon": "wrench" },
+      { "title": "Media & Creative", "icon": "messages" },
+      { "title": "International structures", "icon": "globe" },
+      { "title": "Free zone & Mainland", "icon": "home" },
+      { "title": "Small and medium business", "icon": "corporate" }
+    ]
+  },
+  "whyTrusted": {
+    "title": "Why clients trust us",
+    "items": [
+      { "title": "IFRS-oriented approach", "icon": "receipt" },
+      { "title": "Experience with UAE companies", "icon": "corporate" },
+      { "title": "Russian and English communication", "icon": "messages" },
+      { "title": "Audit preparation year-round", "icon": "audit" },
+      { "title": "Confidentiality and security", "icon": "globe" },
+      { "title": "Multi-currency expertise", "icon": "lock" }
+    ]
   },
   "process": {
     "eyebrow": "How we start",
@@ -112,7 +151,6 @@
     ]
   },
   "contact": {
-    "eyebrow": "Contact",
     "title": "Let's discuss your company's accounting and taxes",
     "text": "Send us a request, and we will help you choose the right starting point: bookkeeping cleanup, ongoing support, or tax advisory.",
     "phoneLabel": "Phone",
@@ -121,7 +159,7 @@
     "phone": "+971 50 000 0000",
     "email": "hello@tabys.consulting",
     "address": "Dubai, United Arab Emirates",
-    "cta": "Message on WhatsApp"
+    "cta": "Contact us"
   },
   "footer": {
     "text": "TABYS Audit & Consulting. Accounting consulting and business support."

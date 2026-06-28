@@ -36,27 +36,28 @@
     "description": "Комплексные бухгалтерские и налоговые услуги в ОАЭ в соответствии с требованиями законодательства и международными стандартами.",
     "primary": "Получить консультацию",
     "secondary": "Наши услуги",
-    "metricsAria": "Преимущества TABYS",
-    "statementLabel": "TABYS",
-    "statementTitle": "Финансовый ритм, готовый к аудиту",
-    "metrics": ["7+ лет опыта", "UAE VAT и Corporate Tax"]
+    "imageAlt": "Абстрактная синяя и оранжевая волна TABYS"
   },
   "trust": [
     {
       "title": "Понимаем ваш бизнес",
-      "text": "Практический подход и решения которые реально помогают."
+      "text": "Практический подход и решения, которые реально помогают.",
+      "icon": "users"
     },
     {
       "title": "Соответствие требованиям ОАЭ",
-      "text": "Работаем в соответствии с UAE VAT, Corporate Tax и IFRS."
+      "text": "Работаем в соответствии с UAE VAT, Corporate Tax и IFRS.",
+      "icon": "shield"
     },
     {
       "title": "Прозрачная коммуникация",
-      "text": "Поддержка на русском и английском языке."
+      "text": "Поддержка на русском и английском языке.",
+      "icon": "messages"
     },
     {
       "title": "Современные системы учета",
-      "text": "Опыт работы с Zoho Books, QuickBooks,FirstBit и другими системами."
+      "text": "Опыт работы с Zoho Books, QuickBooks, FirstBit и другими системами.",
+      "icon": "settings"
     }
   ],
   "services": {
@@ -64,34 +65,72 @@
     "title": "Комплексная поддержка вашего бизнеса",
     "items": [
       {
-        "title": "Бухглатерское сопровождение",
-        "points": ["Ведение учета и обработка документов", "Банковские сверки", "Multy-currency учет", "Подготовка финансовой отчетности"]
+        "title": "Бухгалтерское сопровождение",
+        "icon": "receipt",
+        "points": ["Ведение учета и обработка документов", "Банковские сверки", "Multi-currency учет", "Подготовка финансовой отчетности"]
       },
       {
         "title": "UAE VAT",
+        "icon": "invoice",
         "points": ["Регистрация в VAT", "Подготовка и подача VAT Return", "Сопровождение при запросах FTA", "Корректировки и исправления"]
       },
       {
         "title": "UAE Corporate Tax",
-        "points": ["Регистрация в Corporate TAX", "Подготовка и подача деклараций", "Проверка учета и рабочие файлы", "Координация подачи и консульации"]
+        "icon": "corporate",
+        "points": ["Регистрация в Corporate Tax", "Подготовка и подача деклараций", "Проверка учета и рабочие файлы", "Координация подачи и консультации"]
       },
       {
         "title": "Финансовая отчетность",
-        "points": ["IFRS отчестность", "Management reporting", "P&L,balance sheet Cash Flow", "Анализ ключевых показаталей"]
+        "icon": "chart",
+        "points": ["IFRS отчетность", "Management reporting", "P&L, Balance Sheet, Cash Flow", "Анализ ключевых показателей"]
       },
       {
         "title": "Подготовка к аудиту",
+        "icon": "audit",
         "points": ["Schedules и reconciliations", "Support documents", "Проверка корректности учета", "Координация с аудиторами", "Сопровождение audit requests"]
       },
       {
-        "title": "Payroll & HR Support ",
-        "points": ["Расчет заработной платы", "WPS support", "Leave & EOS calculations ", "Employee accouting support"]
+        "title": "Payroll & HR Support",
+        "icon": "group",
+        "points": ["Расчет заработной платы", "WPS support", "Leave & EOS calculations", "Employee accounting support"]
+      },
+      {
+        "title": "Восстановление учета",
+        "icon": "refresh",
+        "points": ["-", "-", "-", "-"]
+      },
+      {
+        "title": "Сопутствующие услуги",
+        "icon": "link",
+        "points": ["-", "-", "-", "-"]
       }
     ]
   },
   "industries": {
+    "eyebrow": "С кем мы работаем",
     "title": "Мы работаем с компаниями разных сфер",
-    "items": ["Консалтинг", "IT и  Digital бизнес", "Недвижимость", "Торговые компании", "Малый и средний бизнес", "Free zone и Mainland компании", "Media&Creative", "Логистика"]
+    "items": [
+      { "title": "Консалтинг", "icon": "briefcase" },
+      { "title": "IT и Digital бизнес", "icon": "globe" },
+      { "title": "E-commerce", "icon": "cart" },
+      { "title": "Торговые компании", "icon": "store" },
+      { "title": "Сервисные компании", "icon": "wrench" },
+      { "title": "Media & Creative", "icon": "messages" },
+      { "title": "Международные структуры", "icon": "globe" },
+      { "title": "Free zone и Mainland компании", "icon": "home" },
+      { "title": "Малый и средний бизнес", "icon": "corporate" }
+    ]
+  },
+  "whyTrusted": {
+    "title": "Почему нам доверяют",
+    "items": [
+      { "title": "IFRS-ориентированный подход", "icon": "receipt" },
+      { "title": "Опыт работы с компаниями в ОАЭ", "icon": "corporate" },
+      { "title": "Русский и английский языки", "icon": "messages" },
+      { "title": "Подготовка к аудиту круглый год", "icon": "audit" },
+      { "title": "Конфиденциальность и безопасность", "icon": "globe" },
+      { "title": "Multi-currency expertise", "icon": "lock" }
+    ]
   },
   "process": {
     "eyebrow": "Как начинаем",
@@ -112,16 +151,15 @@
     ]
   },
   "contact": {
-    "eyebrow": "Контакты",
     "title": "Надежный бухгалтерский учет для вашего бизнеса в ОАЭ",
-    "text": "Свяжитесь с нами для первичной констультации и обсуждения задач вашего бизнеса.",
+    "text": "Свяжитесь с нами для первичной консультации и обсуждения задач вашего бизнеса.",
     "phoneLabel": "Телефон",
     "emailLabel": "Email",
     "addressLabel": "Адрес",
     "phone": "+971 50 000 0000",
     "email": "hello@tabys.consulting",
     "address": "Дубай, ОАЭ",
-    "cta": "Написать в WhatsApp"
+    "cta": "Связаться с нами"
   },
   "footer": {
     "text": "TABYS Audit & Consulting. Бухгалтерский консалтинг и сопровождение бизнеса."

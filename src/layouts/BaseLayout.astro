@@ -18,7 +18,7 @@ interface Props {
 const { lang, title, description, common } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://tabys.consulting');
 const canonicalUrl = new URL(withBase(`${lang}/`), siteUrl);
-const imageUrl = new URL(withBase('tabys-logo.png'), siteUrl);
+const imageUrl = new URL(withBase('tabys-logo-wide.png'), siteUrl);
 const ogLocale: Record<Locale, string> = {
 	en: 'en_US',
 	ru: 'ru_RU',
@@ -94,6 +94,8 @@ const structuredData = {
 		--orange: #ff7a13;
 		--navy: #021a33;
 		--shadow: 0 18px 50px rgba(4, 121, 198, 0.13);
+		--header-height: 82px;
+		--trust-band-height: 160px;
 		color-scheme: light;
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -227,6 +229,11 @@ const structuredData = {
 	}
 
 	@media (max-width: 760px) {
+		:root {
+			--header-height: 74px;
+			--trust-band-height: auto;
+		}
+
 		html {
 			scroll-padding-top: 86px;
 		}

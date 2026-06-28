@@ -2,11 +2,10 @@
 import ContactSection from '../../components/ContactSection.astro';
 import Hero from '../../components/Hero.astro';
 import IndustriesBand from '../../components/IndustriesBand.astro';
-import ProcessSection from '../../components/ProcessSection.astro';
 import ServicesSection from '../../components/ServicesSection.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
-import TrustCards from '../../components/TrustCards.astro';
+import WhyTrustedBand from '../../components/WhyTrustedBand.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { defaultLocale, isLocale, locales, ui, type Locale } from '../../i18n';
 
@@ -23,22 +22,17 @@ const whatsappHref = `https://wa.me/${messages.contact.phone.replace(/\D/g, '')}
 <BaseLayout lang={lang} title={messages.meta.title} description={messages.meta.description} common={messages.common}>
 	<SiteHeader lang={lang} nav={messages.nav} ctaHref={whatsappHref} common={messages.common} />
 	<main>
-		<Hero hero={messages.hero} />
-		<TrustCards items={messages.trust} />
+		<Hero hero={messages.hero} trust={messages.trust} />
 		<ServicesSection
 			eyebrow={messages.services.eyebrow}
 			title={messages.services.title}
 			items={messages.services.items}
 		/>
-		<ProcessSection
-			eyebrow={messages.process.eyebrow}
-			title={messages.process.title}
-			steps={messages.process.steps}
-		/>
+		<WhyTrustedBand title={messages.whyTrusted.title} items={messages.whyTrusted.items} />
 		<IndustriesBand
+			eyebrow={messages.industries.eyebrow}
 			title={messages.industries.title}
 			items={messages.industries.items}
-			logoAlt={messages.common.logoAlt}
 		/>
 		<ContactSection contact={messages.contact} />
 	</main>
